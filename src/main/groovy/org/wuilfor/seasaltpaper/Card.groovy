@@ -11,11 +11,11 @@ class Card {
     }
 }
 
-class DuoCard extends Card implements Duo {
+class CollectableCard extends Card implements Collectable {
 
 }
 
-class CollectableCard extends Card implements Collectable {
+class MultiplierCard extends Card {
 
 }
 
@@ -30,6 +30,10 @@ class EffectCard extends Card implements Activable {
     EffectCard clone() {
         return new EffectCard(type: type, color: color, effectToApply: effectToApply)
     }
+}
+
+class DuoCard extends EffectCard implements Duo {
+
 }
 
 enum Type {
