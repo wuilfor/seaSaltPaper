@@ -3,8 +3,8 @@ package org.wuilfor.seasaltpaper
 import java.util.function.Function
 
 class Card {
-    Type type
-    CardColor color;
+    CardType type
+    CardColor color
 
     Card clone() {
         return new Card(type: type, color: color)
@@ -36,7 +36,7 @@ class DuoCard extends EffectCard implements Duo {
 
 }
 
-enum Type {
+enum CardType {
     CRAB, BOAT, FISH, SWIMMER, SHARK, MERMAID, SHELL, OCTOPUS, PENGUIN, SAILOR, LIGHTHOUSE, SHOAL, PENGUIN_COLONY, CAPTAIN
 }
 
