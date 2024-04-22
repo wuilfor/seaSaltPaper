@@ -4,11 +4,15 @@ class Deck {
     Stack<Card> cards = []
 
     void addCard(Card card) {
-        cards.add(card);
+        cards.add(card)
     }
 
-    void pop() {
-        cards.pop();
+    Card pop() {
+        return cards.pop()
+    }
+
+    Card putOnTop(Card card) {
+        return cards.push(card)
     }
 
     Deck addCard(Card card, int numberOfCopies) {
