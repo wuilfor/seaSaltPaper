@@ -1,7 +1,7 @@
 package org.wuilfor.seasaltpaper
 
 class Deck {
-    Stack<Card> cards = []
+    private Stack<Card> cards = []
 
     void addCard(Card card) {
         cards.add(card)

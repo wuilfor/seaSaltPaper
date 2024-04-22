@@ -111,7 +111,7 @@ abstract class DeckBuilder {
         }
     }
 
-    private static Function<Game, Player> crabEffect() {
+    private static Function<Game, Void> crabEffect() {
         //TODO
         return new Function<Game, Void>() {
             @Override

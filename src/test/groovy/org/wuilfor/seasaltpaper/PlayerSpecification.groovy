@@ -16,7 +16,7 @@ class PlayerSpecification extends Specification {
     }
 
     def "player pick from deck when discard piles are empty"() {
-        given: "discard piles  empty"
+        given: "discard piles empty"
           game.discardPilesAreEmpty() >> true
           //game.discardPilesAreEmpty() >>> [true, true, false, true]
         when:
