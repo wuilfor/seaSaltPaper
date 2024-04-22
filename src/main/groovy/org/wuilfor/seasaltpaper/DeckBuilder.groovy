@@ -101,20 +101,22 @@ abstract class DeckBuilder {
     }
 
     private static Function<Game, Void> mermaidEffect() {
-        //TODO
         return new Function<Game, Void>() {
             @Override
             Void apply(Game game) {
-                return null
+                if (game.getCurrentPlayer().hand.findAll { it.type == CardType.MERMAID }.size() == 4) {
+                    game.winner()
+                }
             }
         }
     }
 
-    private static Function<Game, Void> crabEffect() {
+    private static Function<Game, Player> crabEffect() {
         //TODO
         return new Function<Game, Void>() {
             @Override
             Void apply(Game game) {
+
                 return null
             }
         }

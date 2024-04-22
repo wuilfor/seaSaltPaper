@@ -9,7 +9,7 @@ class Game {
     Stack<Card> discardPile2
     List<Player> players
 
-    int currentPlayer
+    int currentPlayerIndex
 
     private Game(List<Player> players) {
         deck = DeckBuilder.build()
@@ -26,12 +26,16 @@ class Game {
     }
 
     void start() {
-        currentPlayer = new Random().nextInt(players.size()-1)
-        players.get(currentPlayer).playTurn(this)
+        currentPlayerIndex = new Random().nextInt(players.size() - 1)
+        getCurrentPlayer().playTurn(this)
     }
 
     void triggerNextTurn() {
-        //TODO
+        if (currentPlayerIndex == players.size() - 1) {
+            currentPlayerIndex = -1
+        }
+        currentPlayerIndex++
+        getCurrentPlayer().playTurn(this)
     }
 
     void addToDiscardPile(Card card) {
@@ -71,5 +75,13 @@ class Game {
 
     boolean discardPilesAreEmpty() {
         return discardPile1.isEmpty() && discardPile2.isEmpty()
+    }
+
+    Player getCurrentPlayer() {
+        return players.get(currentPlayerIndex)
+    }
+
+    void winner() {
+        println("WE HAVE A WINNER!! ${getCurrentPlayer().name} wins")
     }
 }
